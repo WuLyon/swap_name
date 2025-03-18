@@ -2,24 +2,26 @@
 
 echo "executing: install swap_name tool..."
 
-# Define the directory where the script is located
-SCRIPT_DIR=$(dirname "$0")
+# URL to download the main script.
+DOWNLOAD_URL="https://raw.githubusercontent.com/WuLyon/swap_name/main/swap_name.py"
 
-# Path to the source file
-SOURCE_FILE="$SCRIPT_DIR/swap_name.py"
-
-# Path to the target file
+# Path to the target file.
 TARGET_FILE="/usr/local/bin/swap_name"
 
-# Check if the source file exists
-if [[ ! -f "$SOURCE_FILE" ]]; then
-    echo "Error: swap_name.py not found in the script directory."
+# Download the file using curl or wget
+echo "Downloading swap_name.py from $DOWNLOAD_URL..."
+if command -v curl &> /dev/null; then
+    sudo curl -o "$TARGET_FILE" "$DOWNLOAD_URL"
+else
+    echo "Error: Curl is not installed. Please install crul and try again."
     exit 1
 fi
 
-# Copy the file to /usr/local/bin and rename it
-echo "Copying swap_name.py to /usr/local/bin/swap_name..."
-sudo cp "$SOURCE_FILE" "$TARGET_FILE"
+# Check if the downlaod was successful.
+if [[ ! -f "$TARGET_FILE" ]]; then
+    echo "Error: Failed to download swap_name.py"
+    exit 1
+fi
 
 # Grant executable permissions
 echo "Setting executable permissions for /usr/local/bin/swap_name..."
@@ -64,7 +66,7 @@ fi
 echo "Installation complete!"
 echo "Please run the following command to apply changes:"
 if [[ "$USER_SHELL" == "bash" ]]; then
-    echo "source ~/.bashrc"
+    echo -e "\033[32msource ~/.bashrc\033[0m"
 elif [[ "$USER_SHELL" == "zsh" ]]; then
-    echo "source ~/.zshrc"
+    echo -e "\033[32msource ~/.zshrc\033[0m"
 fi

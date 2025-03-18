@@ -38,7 +38,7 @@ fi
 echo "Uninstallation complete!"
 echo "Please run the following command to apply changes: "
 if [[ "$USER_SHELL" == "bash" ]]; then
-    echo "source ~/.bashrc"
+    echo -e "\033[32msource ~/.bashrc\033[0m"
 elif [[ "$USER_SHELL" == "zsh" ]]; then
-    echo "source ~/.zshrc"
+    echo -e "\033[32msource ~/.zshrc\033[0m"
 fi
