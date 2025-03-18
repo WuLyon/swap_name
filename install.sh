@@ -12,10 +12,8 @@ TARGET_FILE="/usr/local/bin/swap_name"
 echo "Downloading swap_name.py from $DOWNLOAD_URL..."
 if command -v curl &> /dev/null; then
     sudo curl -o "$TARGET_FILE" "$DOWNLOAD_URL"
-elif command -v wget &> /dev/null; then
-    sudo wget -O "$TARGET_FILE" "$DOWNLOAD_URL"
 else
-    echo "Error: Neither curl nor wget is installed. Please install one of them and try again."
+    echo "Error: Curl is not installed. Please install crul and try again."
     exit 1
 fi
 
@@ -68,7 +66,7 @@ fi
 echo "Installation complete!"
 echo "Please run the following command to apply changes:"
 if [[ "$USER_SHELL" == "bash" ]]; then
-    echo "source ~/.bashrc"
+    echo "\033[32msource ~/.bashrc\033[0m"
 elif [[ "$USER_SHELL" == "zsh" ]]; then
-    echo "source ~/.zshrc"
+    echo "\033[32msource ~/.zshrc\033[0m"
 fi
