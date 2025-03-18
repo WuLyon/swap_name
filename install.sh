@@ -11,7 +11,9 @@ TARGET_FILE="/usr/local/bin/swap_name"
 # Download the file using curl or wget
 echo "Downloading swap_name.py from $DOWNLOAD_URL..."
 if command -v curl &> /dev/null; then
-    sudo curl -o "$TARGET_FILE" "$DOWNLOAD_URL"
+    # The -E parameter means preserving the current user's environment variables, 
+    # which ensures that any terminal proxy configurations are retained. 
+    sudo -E curl -o "$TARGET_FILE" "$DOWNLOAD_URL"
 else
     echo "Error: Curl is not installed. Please install crul and try again."
     exit 1

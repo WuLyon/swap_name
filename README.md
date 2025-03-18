@@ -39,7 +39,7 @@ source ~/.zshrc
 swap_name <file1> <file2>
 ```
 在终端执行上述指令即可，文件名使用相对路径或绝对路径都行。成功执行后结果如下图所示：
-![执行结果](./image/usage1.png)
+![执行结果](https://github.com/WuLyon/swap_name/raw/main/image/usage1.png)
 
 ## Update plan
 ### v_1.0.1
