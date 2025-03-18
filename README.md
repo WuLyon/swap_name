@@ -16,7 +16,7 @@
 ## Install
 - 在终端执行以下指令进行安装
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/WuLyon/swap_name/version_1.0.0/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/WuLyon/swap_name/main/install.sh)"
 ```
 > 注：请先确保环境中已安装curl，可以用`curl --version`检查。
 
@@ -31,7 +31,7 @@ source ~/.zshrc
 
 如果需要卸载，则执行以下指令：
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/WuLyon/swap_name/version_1.0.0/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/WuLyon/swap_name/main/uninstall.sh)"
 ```
 
 ## Usage
