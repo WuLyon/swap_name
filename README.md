@@ -1,12 +1,20 @@
 # swap_name
-一个用于方便交换两个文件的名字的终端小工具-A little terminal utility for swapping the names of two files
+一个用于方便交换两个文件的名字的终端小工具，可用于快速备份和更新文件-A little terminal utility for swapping the names of two files, which could be used for quickly backing up and updating files.
 
-## Background
-这只是一个简单的练手项目，它所实现的功能和使用场景比较单一，可能对很多人来说也并不常见。
+## Usage
+- 如果只是需要单纯的交换文件名，则：
+```shell
+swap_name <file1> <file2>
+```
+执行上述指令即可，文件名使用相对路径或绝对路径都行。成功执行后结果如下图所示：
+![执行结果](https://github.com/WuLyon/swap_name/raw/main/image/usage1.png)
 
-但由于我在工作中经常需要调整或更换一些配置文件，旧的配置文件需要更新或备份，因此实际操作中需要先将旧的配置文件重命名为一个临时的名字，再把新的文件更改为能够让程序读取的正确文件名。
-
-为了避免这样繁琐的操作，我想将原来需要手动执行的两三步操作合并为一条指令就可以完成。实际使用起来可能并不会提高多少工作效率，但简化后的操作更**符合直觉**，能够减少工作时的脑力负担。（另外，作为一个初学者，使用自己开发的小工具也能比较让自己心情愉悦～～～祝各位使用愉快）
+- 如果需要将原文件<file1>备份后，用新文件<file2>替换之，则可使用`-b`或`--bak`参数：
+```shell
+swap_name -b <file1> <file2>
+```
+下图可以看到执行结果：
+![执行结果](https://github.com/WuLyon/swap_name/raw/main/image/usage2.png)
 
 ## Features
 - 基本功能是一条命令交换两个文件的文件名，或选择其中一个进行备份，用新文件替换它
@@ -34,20 +42,16 @@ source ~/.zshrc
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/WuLyon/swap_name/main/uninstall.sh)"
 ```
 
-## Usage
-- 如果只是需要单纯的交换文件名，则：
-```shell
-swap_name <file1> <file2>
-```
-执行上述指令即可，文件名使用相对路径或绝对路径都行。成功执行后结果如下图所示：
-![执行结果](https://github.com/WuLyon/swap_name/raw/main/image/usage1.png)
+## Background
+这只是一个简单的练手项目，它所实现的功能和使用场景比较单一，可能对很多人来说也并不常见。
 
-- 如果需要将原文件<file1>备份后，用新文件<file2>替换之，则可使用`-b`或`--bak`参数：
-```shell
-swap_name -b <file1> <file2>
-```
-下图可以看到执行结果：
-![执行结果](https://github.com/WuLyon/swap_name/raw/main/image/usage2.png)
+但由于我在工作中经常需要调整或更换一些配置文件，旧的配置文件需要更新或备份，因此实际操作中需要先将旧的配置文件重命名为一个临时的名字，再把新的文件更改为能够让程序读取的正确文件名。
+
+为了避免这样繁琐的操作，我想将原来需要手动执行的两三步操作合并为一条指令就可以完成。实际使用起来可能并不会提高多少工作效率，但简化后的操作更**符合直觉**，能够减少工作时的脑力负担。（另外，作为一个初学者，使用自己开发的小工具也能比较让自己心情愉悦～～～祝各位使用愉快）
+
+
+
+
 
 
 ## Update plan
