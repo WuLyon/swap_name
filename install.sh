@@ -3,7 +3,7 @@
 echo "executing: install swap_name tool..."
 
 # URL to download the main script.
-DOWNLOAD_URL="https://raw.githubusercontent.com/WuLyon/swap_name/v1.1.0/swap_name.py"
+DOWNLOAD_URL="https://raw.githubusercontent.com/WuLyon/swap_name/main/swap_name.py"
 
 # Path to the target file.
 TARGET_FILE="/usr/local/bin/swap_name"
