@@ -13,26 +13,6 @@ fi
 
 # Check the user's default shell
 USER_SHELL=$(basename $SHELL)
-if [[ "$USER_SHELL" == "bash" ]]; then
-    CONFIG_FILE="$HOME/.bashrc"
-elif [[ "$USER_SHELL" == "zsh" ]]; then
-    CONFIG_FILE="$HOME/.zshrc"
-else
-    echo "Error: Unsupported shell ($USER_SHELL)."
-    exit 1
-fi
-
-# Remove the alias from the configuration file
-if grep -q "alias swap_name=" "$CONFIG_FILE"; then
-    echo "Removing alias from $CONFIG_FILE..."
-    if [[ "$(uname)" == Darwin ]]; then
-        sed -i "" '/^alias swap_name=/d' "$CONFIG_FILE"
-    else
-        sed -i '/^alias swap_name=/d' "$CONFIG_FILE"
-    fi
-else
-    echo "Alias not found in $CONFIG_FILE."
-fi
     
 # Prompt the user to reload the configuration file
 echo "Uninstallation complete!"
